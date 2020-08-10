@@ -26,3 +26,5 @@ Step 6: call solveMaze() which implements actual algorithm. i)initially current 
 				make current grid as predecer of neighbour found in above step
 				update current grid to new grid.
 				recursive call to solveMaze() using new current grid.
+step 7: when end pixel is found.
+		Now, end grid has the pointer to its preceder grid and so on till the starting grid. So trace the path.
