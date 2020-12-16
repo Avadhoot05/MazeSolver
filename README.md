@@ -1,3 +1,5 @@
+You can watch working of the project here: https://youtu.be/uAqHXnGlNuc
+
 # MazeSolver
 Maze Solver using A* algorithm
 code: FinalMaze.py create_maze
