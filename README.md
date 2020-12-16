@@ -28,3 +28,8 @@ Step 6: call solveMaze() which implements actual algorithm. i)initially current 
 				recursive call to solveMaze() using new current grid.
 step 7: when end pixel is found.
 		Now, end grid has the pointer to its preceder grid and so on till the starting grid. So trace the path.
+
+Input Image:
+![input](https://user-images.githubusercontent.com/48721257/102319290-a6c24980-3fa0-11eb-82eb-81e857a35a27.png)
+
+Output:
