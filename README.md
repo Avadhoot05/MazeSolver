@@ -1,4 +1,4 @@
-You can watch working of the project here: https://youtu.be/uAqHXnGlNuc
+You can the watch working of the project here: https://youtu.be/uAqHXnGlNuc
 
 # MazeSolver
 Maze Solver using A* algorithm
