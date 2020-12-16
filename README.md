@@ -30,6 +30,11 @@ step 7: when end pixel is found.
 		Now, end grid has the pointer to its preceder grid and so on till the starting grid. So trace the path.
 
 Input Image:
+
+
 ![input](https://user-images.githubusercontent.com/48721257/102319290-a6c24980-3fa0-11eb-82eb-81e857a35a27.png)
 
 Output:
+
+
+![output](https://user-images.githubusercontent.com/48721257/102319452-ea1cb800-3fa0-11eb-9ae1-ccbd19f851bf.png)
