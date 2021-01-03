@@ -6,9 +6,6 @@ import winsound
 import sys
 
 
-
-
-
 class Grid:
 	def __init__(self,x,y,clr):
 		global start,end
@@ -45,11 +42,14 @@ def createGrid(img,h,w,gsize):
 		for j in range(gsize//2,w,gsize):
 			if img[i][j][0] == 0:
 				List.append(Grid(j,i,'b'))
-				print("b-",end="")
+				# print("b",end="")
 			else:
 				List.append(Grid(j,i,'w'))
-				print("w-",end="")
-		print("")
+		# 		print("w",end="")
+		# 	print("-",end="")
+		# print("")
+				
+		
 	return List
 
 
@@ -91,8 +91,8 @@ def getNeighbours(i,j):
 
 
 def printPath(grid):
-	global img
-	img =  cv.circle(img,(grid.xCor,grid.yCor),4,(0,255,0),-1)
+	global img,gridSize
+	img =  cv.rectangle(img,(grid.xCor-gridSize//2,grid.yCor-gridSize//2),(grid.xCor+gridSize//2,grid.yCor+gridSize//2),(0,255,0),-1)
 	cv.imshow("i",img)
 	cv.waitKey(5)
 	if grid.predecer:
@@ -110,7 +110,7 @@ def getPosof(current):
 def solveMaze(mazeMatrix,cr):
 	global closeL,start,end,img
 	current = cr
-	img =  cv.circle(img,(current.xCor,current.yCor),4,(0,0,255),-1)
+	img =  cv.rectangle(img,(current.xCor-gridSize//2,current.yCor-gridSize//2),(current.xCor+gridSize//2,current.yCor+gridSize//2),(0,0,255),-1)
 	cv.imshow("i",img)
 	cv.waitKey(5)
 	if current not in closeL:
@@ -177,10 +177,10 @@ def click_event(event,x,y,flags,param):
 
 sys.setrecursionlimit(10000)
 
-img = cv.imread("maze-GridSize_20REDwithblackFinal.png")
-img = cv.resize(img,(500,500))
+img = cv.imread("maze.png")
+#img = cv.resize(img,(500,500))
 w,h,rw,cl,gridSize = getAttributes(img)
-#print(w,h,rw,cl,gridSize,sep="**")
+
 print(rw,cl)
 
 mList  = createGrid(img,h,w,gridSize)                  					#returns a 1D numpy array of the grids  
