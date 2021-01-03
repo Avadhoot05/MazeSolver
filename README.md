@@ -1,7 +1,7 @@
 You can watch the working of the project here: https://youtu.be/uAqHXnGlNuc
 
 You can try new mazes from here https://keesiemeijer.github.io/maze-generator/
-(Just download the mazes and replace image path in Finalmaze.py)
+(Just download the mazes and replace image path in FinalMaze.py)
 
 # MazeSolver
 Maze Solver using A* algorithm
@@ -37,9 +37,12 @@ step 7: when end pixel is found.
 Input Image:
 
 
-![input](https://user-images.githubusercontent.com/48721257/102319290-a6c24980-3fa0-11eb-82eb-81e857a35a27.png)
+![input](https://user-images.githubusercontent.com/48721257/103482286-02486000-4e06-11eb-9921-f9359fb6c6fd.png)
 
 Output:
 
 
-![output](https://user-images.githubusercontent.com/48721257/102319452-ea1cb800-3fa0-11eb-9ae1-ccbd19f851bf.png)
+![solution](https://user-images.githubusercontent.com/48721257/103482285-007e9c80-4e06-11eb-8e71-a162e1bc1400.png)
+
+
+
