@@ -1,10 +1,9 @@
 import cv2 as cv
 import numpy as np
 import math
-import time
-import winsound
 import sys
-
+import datetime
+import os
 
 class Grid:
 	def __init__(self,x,y,clr):
@@ -106,6 +105,25 @@ def getPosof(current):
     	if current in x:
         	return k, x.index(current)
 
+def saveOutput():
+	global img,og
+	try:
+		if not os.path.isdir("Outputs"):
+			os.mkdir("Outputs")
+
+
+		dirName = ("Outputs/output-at{}".format(datetime.datetime.now())).replace(":","-")
+		os.mkdir(dirName)
+
+
+		cv.imwrite("{}/solution.png".format(dirName),img)  
+		cv.imwrite("{}/input.png".format(dirName),og) 
+	except:
+		print("**Error while saving output**")
+
+  
+	return 
+
                                 
 def solveMaze(mazeMatrix,cr):
 	global closeL,start,end,img
@@ -118,10 +136,13 @@ def solveMaze(mazeMatrix,cr):
 
 	if current.xCor == end[0] and current.yCor == end[1]:         		#if current node is target node then stop
 		printPath(current)
+		saveOutput()
 		while True:
 			if cv.waitKey(1) == 27:
 				cv.destroyAllWindows()
-				exit()
+				return
+				
+
 
 
 	currentI,currentJ = getPosof(current)
@@ -178,6 +199,7 @@ def click_event(event,x,y,flags,param):
 sys.setrecursionlimit(10000)
 
 img = cv.imread("maze.png")
+og=img.copy()
 #img = cv.resize(img,(500,500))
 w,h,rw,cl,gridSize = getAttributes(img)
 
@@ -209,6 +231,10 @@ mazeMatrix[Startgrid_row][Startgrid_col].Hcost =  distance((start[0],start[1]),e
 
 closeL = []
 
-solveMaze(mazeMatrix,mazeMatrix[Startgrid_row][Startgrid_col])                                 #specify the start grid       
+solveMaze(mazeMatrix,mazeMatrix[Startgrid_row][Startgrid_col])                                 #specify the start grid 
+
+
+
+   
 
 
