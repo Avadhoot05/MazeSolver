@@ -1,4 +1,4 @@
-You can watch the working of the project here: https://youtu.be/uAqHXnGlNuc
+**You can watch the working of the project here:** https://youtu.be/uAqHXnGlNuc
 
 You can try new mazes from here https://keesiemeijer.github.io/maze-generator/
 (Just download the mazes and replace image path in FinalMaze.py)
